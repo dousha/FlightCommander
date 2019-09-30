@@ -1,0 +1,25 @@
+﻿<Window x:Class="FlightCommander.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightCommander"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid Name="container">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Name="topContainer" Grid.Row="0">
+            
+        </Grid>
+        <Grid Name="contentContainer" Grid.Row="1">
+            
+        </Grid>
+        <Grid Name="statusContaner" Grid.Row="2">
+            
+        </Grid>
+    </Grid>
+</Window>
