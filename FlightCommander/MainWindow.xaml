@@ -4,22 +4,89 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightCommander"
+        xmlns:p = "clr-namespace:FlightCommander.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="768" Width="1024"
+        Language="zh-CN">
     <Grid Name="container">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="25"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Name="topContainer" Grid.Row="0">
-            
+        <Grid Name="topContainer" Grid.Row="0" HorizontalAlignment="Left">
+            <Grid Name="bigButtons" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="{x:Static p:Resources.lblComPort}" Height="25" Margin="5,0,0,0"></Label>
+                <ComboBox Name="comboPorts" Width="100" Height="25" Margin="5,0,5,0" Grid.Column="1"></ComboBox>
+                <Button Name="btnScan" Grid.Column="2" Content="{x:Static p:Resources.btnScan}" Margin="5,0"></Button>
+                <Button Name="btnConnect" Grid.Column="3" Content="{x:Static p:Resources.btnConnect}" Margin="5,0"></Button>
+                <Button Name="btnDisconnect" Grid.Column="4" Content="{x:Static p:Resources.btnDisconnect}" Margin="5,0"></Button>
+                <Button Name="btnRecord" Grid.Column="5" Content="{x:Static p:Resources.btnRecord}" Margin="5,0"></Button>
+                <Button Name="btnStop" Grid.Column="5" Content="{x:Static p:Resources.btnStop}" Margin="5,0" Visibility="Hidden"></Button>
+            </Grid>
         </Grid>
         <Grid Name="contentContainer" Grid.Row="1">
-            
+            <TabControl>
+                <TabItem Name="tabDeck"  Header="{x:Static p:Resources.tabDeck}">
+                    
+                </TabItem>
+                <TabItem Name="tabMap" Header="{x:Static p:Resources.tabMap}">
+                    
+                </TabItem>
+                <TabItem Name="tabToggles" Header="{x:Static p:Resources.tabToggles}">
+                    
+                </TabItem>
+                <TabItem Name="tabParams" Header="{x:Static p:Resources.tabParams}">
+                    <Grid VerticalAlignment="Top" Margin="0,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button Name="btnRead" Content="{x:Static p:Resources.btnRead}" Grid.Column="0" Width="100" Margin="5,0"></Button>
+                            <Button Name="btnWrite" Content="{x:Static p:Resources.btnWrite}" Grid.Column="1" Width="90" Margin="5,0"></Button>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Name="tabSettings" Header="{x:Static p:Resources.tabSettings}">
+                    
+                </TabItem>
+                <TabItem Name="tabDebug" Header="{x:Static p:Resources.tabDebug}">
+                    
+                </TabItem>
+            </TabControl>
         </Grid>
         <Grid Name="statusContaner" Grid.Row="2">
-            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="{x:Static p:Resources.lblConnectionStatus}" Grid.Column="0"></Label>
+            <Label Name="lblConnectionStatus" Content="???" Grid.Column="1"></Label>
+            <Label Content="{x:Static p:Resources.lblFrameCount}" Grid.Column="3"></Label>
+            <Label Name="lblFrameCount" Content="0" Grid.Column="4"></Label>
+            <Label Content="{x:Static p:Resources.lblErrorRate}" Grid.Column="5"></Label>
+            <Label Name="lblErrorRate" Content="0" Grid.Column="6"></Label>
         </Grid>
     </Grid>
 </Window>
