@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="FlightCommander.CustomControls.VarioMeter"
+             x:Name="varioMeter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightCommander.CustomControls"
+             mc:Ignorable="d" 
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             d:DesignHeight="200" d:DesignWidth="200">
+    <Grid>
+        <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+        <Canvas Background="White" Grid.Row="0" ClipToBounds="True">
+            <Ellipse Margin="5" StrokeThickness="2" Width="190" Height="190">
+                <Ellipse.Stroke>
+                    <SolidColorBrush Color="Black"></SolidColorBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+            <Border Width="200" HorizontalAlignment="Center" Canvas.Top="60">
+                <TextBlock Text="VERTICAL SPEED" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Consolas, monospace" FontSize="12"></TextBlock>
+            </Border>
+            <Border Width="100" Canvas.Top="135" Padding="0, 0, 5, 0">
+                <TextBlock Text="{Binding ElementName=varioMeter, Path=Speed}" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Consolas, monospace" FontSize="20"></TextBlock>
+            </Border>
+            <Border Width="100" Canvas.Top="135" Canvas.Left="100" Padding="5, 0, 0, 0">
+                <TextBlock Text="m/s" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Consolas, monospace" FontSize="20"></TextBlock>
+            </Border>
+            <Path Stroke="DarkGray" StrokeThickness="1" Fill="Gray" RenderTransformOrigin="1, 0.945">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="100, 95" IsClosed="False">
+                            <PolyLineSegment>
+                                <PolyLineSegment.Points>
+                                    <Point X="70" Y="95"></Point>
+                                    <Point X="65" Y="97"></Point>
+                                    <Point X="20" Y="97"></Point>
+                                    <Point X="15" Y="100"></Point>
+                                    <Point X="20" Y="103"></Point>
+                                    <Point X="65" Y="103"></Point>
+                                    <Point X="70" Y="105"></Point>
+                                    <Point X="100" Y="105"></Point>
+                                </PolyLineSegment.Points>
+                            </PolyLineSegment>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+                <Path.Effect>
+                    <DropShadowEffect BlurRadius="2" ShadowDepth="2"></DropShadowEffect>
+                </Path.Effect>
+                <Path.RenderTransform>
+                    <RotateTransform Angle="0"></RotateTransform>
+                </Path.RenderTransform>
+            </Path>
+            <Ellipse Margin="90" Width="20" Height="20" Fill="Gray" StrokeThickness="2" Stroke="Black">
+                <Ellipse.Effect>
+                    <DropShadowEffect ShadowDepth="2"></DropShadowEffect>
+                </Ellipse.Effect>
+            </Ellipse>
+        </Canvas>
+    </Grid>
+</UserControl>

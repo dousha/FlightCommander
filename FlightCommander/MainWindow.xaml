@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightCommander"
+        xmlns:cc="clr-namespace:FlightCommander.CustomControls"
         xmlns:p = "clr-namespace:FlightCommander.Properties"
         mc:Ignorable="d"
         Title="MainWindow" Height="768" Width="1024"
@@ -36,7 +37,23 @@
         <Grid Name="contentContainer" Grid.Row="1">
             <TabControl>
                 <TabItem Name="tabDeck"  Header="{x:Static p:Resources.tabDeck}">
-                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition Height="1*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <cc:ArtificialHorizon Grid.Column="0"></cc:ArtificialHorizon>
+                            <cc:VarioMeter Grid.Column="1"></cc:VarioMeter>
+                        </Grid>
+                    </Grid>
                 </TabItem>
                 <TabItem Name="tabMap" Header="{x:Static p:Resources.tabMap}">
                     

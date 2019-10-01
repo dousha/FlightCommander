@@ -54,17 +54,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CustomControls\SpeedIndicator.xaml.cs">
-      <DependentUpon>SpeedIndicator.xaml</DependentUpon>
+    <Compile Include="CustomControls\Altimeter.xaml.cs">
+      <DependentUpon>Altimeter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ArtificialHorizon.xaml.cs">
+      <DependentUpon>ArtificialHorizon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Compass.xaml.cs">
+      <DependentUpon>Compass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\HeadingIndicator.xaml.cs">
+      <DependentUpon>HeadingIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\VarioMeter.xaml.cs">
+      <DependentUpon>VarioMeter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.zh-CN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.zh-CN.resx</DependentUpon>
     </Compile>
-    <Page Include="CustomControls\SpeedIndicator.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="CustomControls\Altimeter.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\ArtificialHorizon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\Compass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\HeadingIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\VarioMeter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

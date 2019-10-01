@@ -3,11 +3,11 @@
 namespace FlightCommander.CustomControls
 {
     /// <summary>
-    /// SpeedIndicator.xaml 的交互逻辑
+    /// ArtificialHorizon.xaml 的交互逻辑
     /// </summary>
-    public partial class SpeedIndicator : UserControl
+    public partial class ArtificialHorizon : UserControl
     {
-        public SpeedIndicator()
+        public ArtificialHorizon()
         {
             InitializeComponent();
         }
