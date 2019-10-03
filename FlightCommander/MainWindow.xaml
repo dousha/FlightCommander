@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:FlightCommander"
         xmlns:cc="clr-namespace:FlightCommander.CustomControls"
         xmlns:p = "clr-namespace:FlightCommander.Properties"
+        xmlns:sc="clr-namespace:FlightCommander.SerialCommunication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1024"
+        Title="FlightCommander" Height="768" Width="1024"
         Language="zh-CN">
     <Grid Name="container">
         <Grid.RowDefinitions>
@@ -20,18 +21,31 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
                     <ColumnDefinition Width="100"></ColumnDefinition>
                     <ColumnDefinition Width="100"></ColumnDefinition>
                     <ColumnDefinition Width="100"></ColumnDefinition>
                     <ColumnDefinition Width="100"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Content="{x:Static p:Resources.lblComPort}" Height="25" Margin="5,0,0,0"></Label>
-                <ComboBox Name="comboPorts" Width="100" Height="25" Margin="5,0,5,0" Grid.Column="1"></ComboBox>
-                <Button Name="btnScan" Grid.Column="2" Content="{x:Static p:Resources.btnScan}" Margin="5,0"></Button>
-                <Button Name="btnConnect" Grid.Column="3" Content="{x:Static p:Resources.btnConnect}" Margin="5,0"></Button>
-                <Button Name="btnDisconnect" Grid.Column="4" Content="{x:Static p:Resources.btnDisconnect}" Margin="5,0"></Button>
-                <Button Name="btnRecord" Grid.Column="5" Content="{x:Static p:Resources.btnRecord}" Margin="5,0"></Button>
-                <Button Name="btnStop" Grid.Column="5" Content="{x:Static p:Resources.btnStop}" Margin="5,0" Visibility="Hidden"></Button>
+                <Label Content="{x:Static p:Resources.lblComPort}" Grid.Column="0" Height="25" Margin="5,0,0,0"></Label>
+                <ComboBox Name="comboPorts" Width="100" Height="25" Margin="5, 0" Grid.Column="1" IsEditable="True"></ComboBox>
+                <Label Content="{x:Static p:Resources.lblBaudRate}" Grid.Column="2" Height="25" Margin="5, 0"></Label>
+                <ComboBox Name="comboBaud" Width="100" Height="25" Margin="5, 0" Grid.Column="3" IsEditable="True">
+                    <ComboBoxItem>9600</ComboBoxItem>
+                    <ComboBoxItem>14400</ComboBoxItem>
+                    <ComboBoxItem>19200</ComboBoxItem>
+                    <ComboBoxItem>38400</ComboBoxItem>
+                    <ComboBoxItem>57600</ComboBoxItem>
+                    <ComboBoxItem>115200</ComboBoxItem>
+                    <ComboBoxItem>128000</ComboBoxItem>
+                    <ComboBoxItem>256000</ComboBoxItem>
+                </ComboBox>
+                <Button Name="btnScan" Grid.Column="4" Content="{x:Static p:Resources.btnScan}" Margin="5, 0" Click="BtnScanClick"></Button>
+                <Button Name="btnConnect" Grid.Column="5" Content="{x:Static p:Resources.btnConnect}" Margin="5, 0" Click="BtnConnectClick"></Button>
+                <Button Name="btnDisconnect" Grid.Column="6" Content="{x:Static p:Resources.btnDisconnect}" Margin="5, 0" Click="BtnDisconnectClick" IsEnabled="False"></Button>
+                <Button Name="btnRecord" Grid.Column="7" Content="{x:Static p:Resources.btnRecord}" Margin="5, 0" Click="BtnRecordClick"></Button>
+                <Button Name="btnStop" Grid.Column="7" Content="{x:Static p:Resources.btnStop}" Margin="5, 0" Visibility="Hidden" Click="BtnStopClick"></Button>
             </Grid>
         </Grid>
         <Grid Name="contentContainer" Grid.Row="1">
@@ -58,6 +72,9 @@
                 <TabItem Name="tabMap" Header="{x:Static p:Resources.tabMap}">
                     
                 </TabItem>
+                <TabItem Name="tabTuning" Header="{x:Static p:Resources.tabTuning}">
+                    
+                </TabItem>
                 <TabItem Name="tabToggles" Header="{x:Static p:Resources.tabToggles}">
                     
                 </TabItem>
@@ -80,6 +97,9 @@
                         </Grid>
                     </Grid>
                 </TabItem>
+                <TabItem Name="tabGraph" Header="{x:Static p:Resources.tabGraph}">
+                    
+                </TabItem>
                 <TabItem Name="tabSettings" Header="{x:Static p:Resources.tabSettings}">
                     
                 </TabItem>
@@ -99,7 +119,7 @@
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Label Content="{x:Static p:Resources.lblConnectionStatus}" Grid.Column="0"></Label>
-            <Label Name="lblConnectionStatus" Content="???" Grid.Column="1"></Label>
+            <Label Name="lblConnectionStatus" Content="{x:Static p:Resources.lblStatusDisconnected}" Grid.Column="1"></Label>
             <Label Content="{x:Static p:Resources.lblFrameCount}" Grid.Column="3"></Label>
             <Label Name="lblFrameCount" Content="0" Grid.Column="4"></Label>
             <Label Content="{x:Static p:Resources.lblErrorRate}" Grid.Column="5"></Label>

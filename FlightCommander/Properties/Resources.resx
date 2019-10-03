@@ -147,6 +147,9 @@
   <data name="btnWrite" xml:space="preserve">
     <value>Write PID</value>
   </data>
+  <data name="lblBaudRate" xml:space="preserve">
+    <value>Baud</value>
+  </data>
   <data name="lblComPort" xml:space="preserve">
     <value>Port</value>
   </data>
@@ -159,11 +162,23 @@
   <data name="lblFrameCount" xml:space="preserve">
     <value>FrameCount: </value>
   </data>
+  <data name="lblStatusConnected" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="lblStatusDisconnected" xml:space="preserve">
+    <value>Disconnected</value>
+  </data>
+  <data name="lblStatusStalled" xml:space="preserve">
+    <value>Connection Stalled</value>
+  </data>
   <data name="tabDebug" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="tabDeck" xml:space="preserve">
     <value>Deck</value>
+  </data>
+  <data name="tabGraph" xml:space="preserve">
+    <value>Sensor graph</value>
   </data>
   <data name="tabMap" xml:space="preserve">
     <value>Map</value>
@@ -176,5 +191,8 @@
   </data>
   <data name="tabToggles" xml:space="preserve">
     <value>Toggles</value>
+  </data>
+  <data name="tabTuning" xml:space="preserve">
+    <value>Flight paramters</value>
   </data>
 </root>

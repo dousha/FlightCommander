@@ -12,31 +12,21 @@ namespace FlightCommander.CustomControls
             InitializeComponent();
         }
 
-        public float Rotation
-        {
-            set
-            {
-                rotation = value;
-            }
-        }
+        public float Rotation { get; set; }
 
         public float Roll
         {
+            get
+            {
+                return Rotation;
+            }
             set
             {
-                rotation = value;
+                Rotation = value;
             }
         }
 
-        public float Yaw
-        {
-            set
-            {
-                yaw = value;
-            }
-        }
+        public float Yaw { get; set; }
 
-        private float yaw = 0.0f;
-        private float rotation = 0.0f;
     }
 }

@@ -19,7 +19,7 @@ namespace FlightCommander.Properties {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -151,6 +151,15 @@ namespace FlightCommander.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Baud 的本地化字符串。
+        /// </summary>
+        public static string lblBaudRate {
+            get {
+                return ResourceManager.GetString("lblBaudRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Port 的本地化字符串。
         /// </summary>
         public static string lblComPort {
@@ -187,6 +196,33 @@ namespace FlightCommander.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Connected 的本地化字符串。
+        /// </summary>
+        public static string lblStatusConnected {
+            get {
+                return ResourceManager.GetString("lblStatusConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Disconnected 的本地化字符串。
+        /// </summary>
+        public static string lblStatusDisconnected {
+            get {
+                return ResourceManager.GetString("lblStatusDisconnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Connection Stalled 的本地化字符串。
+        /// </summary>
+        public static string lblStatusStalled {
+            get {
+                return ResourceManager.GetString("lblStatusStalled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Debug 的本地化字符串。
         /// </summary>
         public static string tabDebug {
@@ -201,6 +237,15 @@ namespace FlightCommander.Properties {
         public static string tabDeck {
             get {
                 return ResourceManager.GetString("tabDeck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sensor graph 的本地化字符串。
+        /// </summary>
+        public static string tabGraph {
+            get {
+                return ResourceManager.GetString("tabGraph", resourceCulture);
             }
         }
         
@@ -237,6 +282,15 @@ namespace FlightCommander.Properties {
         public static string tabToggles {
             get {
                 return ResourceManager.GetString("tabToggles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Flight paramters 的本地化字符串。
+        /// </summary>
+        public static string tabTuning {
+            get {
+                return ResourceManager.GetString("tabTuning", resourceCulture);
             }
         }
     }

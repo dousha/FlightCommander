@@ -147,6 +147,9 @@
   <data name="btnWrite" xml:space="preserve">
     <value>写入 PID</value>
   </data>
+  <data name="lblBaudRate" xml:space="preserve">
+    <value>串口速率</value>
+  </data>
   <data name="lblComPort" xml:space="preserve">
     <value>串口选择</value>
   </data>
@@ -159,11 +162,23 @@
   <data name="lblFrameCount" xml:space="preserve">
     <value>传输计数：</value>
   </data>
+  <data name="lblStatusConnected" xml:space="preserve">
+    <value>已连接</value>
+  </data>
+  <data name="lblStatusDisconnected" xml:space="preserve">
+    <value>已断开</value>
+  </data>
+  <data name="lblStatusStalled" xml:space="preserve">
+    <value>无应答</value>
+  </data>
   <data name="tabDebug" xml:space="preserve">
     <value>调试</value>
   </data>
   <data name="tabDeck" xml:space="preserve">
     <value>仪表盘</value>
+  </data>
+  <data name="tabGraph" xml:space="preserve">
+    <value>图表</value>
   </data>
   <data name="tabMap" xml:space="preserve">
     <value>地图</value>
@@ -176,5 +191,8 @@
   </data>
   <data name="tabToggles" xml:space="preserve">
     <value>遥控开关</value>
+  </data>
+  <data name="tabTuning" xml:space="preserve">
+    <value>参数调节</value>
   </data>
 </root>
